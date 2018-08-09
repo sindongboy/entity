@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.skplanet.nlp.data</OriginalElement>
+  <nodes>
+    <node x="176.0" y="0.0">com.skplanet.nlp.data.Entity</node>
+    <node x="222.0" y="234.0">com.skplanet.nlp.data.AbstractEntity</node>
+    <node x="0.0" y="381.0">com.skplanet.nlp.data.ProductEntity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.skplanet.nlp.data.AbstractEntity" target="com.skplanet.nlp.data.Entity">
+      <point x="0.0" y="-48.5" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.data.ProductEntity" target="com.skplanet.nlp.data.AbstractEntity">
+      <point x="0.0" y="-291.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8718209562563581" x="315.5" y="481.5" />
+  <SelectedNodes>
+    <node>com.skplanet.nlp.data.ProductEntity</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

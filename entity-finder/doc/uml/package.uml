@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.skplanet.nlp</OriginalElement>
+  <nodes>
+    <node x="-303.0" y="145.0">com.skplanet.nlp.core</node>
+    <node x="-307.0" y="31.0">com.skplanet.nlp.driver</node>
+    <node x="-456.0" y="287.0">com.skplanet.nlp.data</node>
+    <node x="37.0" y="34.0">com.skplanet.nlp.PROP</node>
+    <node x="-144.0" y="283.0">com.skplanet.nlp.util</node>
+    <node x="-302.0" y="286.0">com.skplanet.nlp.dict</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.skplanet.nlp.core" target="com.skplanet.nlp.util">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.core" target="com.skplanet.nlp.dict">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.core" target="com.skplanet.nlp.data">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.util" target="com.skplanet.nlp.util">
+      <point x="0.0" y="0.0" />
+      <point x="-89.0" y="258.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.driver" target="com.skplanet.nlp.core">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="8.0" y="174.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,45 @@
+# ------------------------------------------- #
+# 주제어 사전 자동 구축 도구
+# (for entity-finder package)
+# author : Donghun Shin / donghun.shin@sk.com
+# ------------------------------------------- #
+
+1. Info
+	- 상품 사이트(N 사) 에서 수집된 상품페이지를 기반으로 현재 entity-finder 에서 활용 가능한 entity dictionary를 현행화 하고 자동으로 구축 하기 위한 tool임.
+	- 카테고리가 고정된 사전 구축이 아니라, 사용 목적에 따라 entity group 의 depth, kind 를 임의로 빠르게 조합하고 활용 할 수 있다.
+
+2. Knowledge Construction
+	2.1 Crawled Page Parsing
+		- 네이버 상품 페이지에서 상품메타를 추출 (./meta)
+		- ./compile.sh -m META -p ${num_threads}
+
+	2.2 추출된 상품메타를 각 depth 별로 분류 (./knowledge/depth-1,2,3)
+		- ./compile.sh -m SPLIT -p ${num_threads} 
+
+	2.3 각 depth 별 카테고리 ID 할당 및 Mapping 파일 생성 (./map/category.map.1,2,3)
+		- ./compile.sh -m MAP -p ${num_threads}
+
+	2.4 사전 파일 생성 ( ./knowledge/depth-1,2,3/*.know)
+		- ./compile.sh -m KNOW -p ${num_threads}
+
+3. Dictionary Construction
+	3.1 Entity Dictionary Generation
+		- ./makeDict.sh -d [depth] -q "${query}" -o /path/to/the/output/directory
+		- ex) 
+			$ ./makeDict.sh -d 3 -q "커피머신\|커피메이커" -o ./
+			$ 디지털/가전.주방가전.커피머신
+			$ 디지털/가전.주방가전.커피메이커
+			$ 50000003.50000213.50001185
+			$ 50000003.50000213.50001708
+			$ done!
+			./527.537.dict <== 생성된 사전 ( 조합된 카테고리 아이디들의 조합이 default 사전 명이 됨)
+
+4. Dictionary Format
+
+	- TSV format
+	- Fields
+		[expression combination] [maker] [brand] [model] [category path]
+	- ex)
+		네스프레소UC50  네스프레소  네스프레소  네스프레소 U C50    디지털/가전.주방가전.커피머신.에스프레소머신
+		UC50    네스프레소  네스프레소  네스프레소 U C50    디지털/가전.주방가전.커피머신.에스프레소머신
+

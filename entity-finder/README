@@ -1,0 +1,61 @@
+
+# ---------------------------------------------- #
+# Entity Finder for Product
+# Author : Donghun Shin / donghun.shin@sk.com 
+# ---------------------------------------------- #
+
+1. Find Entity
+	= CRF Finder =
+	usage: ./crf-finder.sh [options]
+	-d	model id
+	-m	mode [cli | file]
+	-i    input file to be tested
+	-o    output file to write the result : input text will be tagged by start tag (<<<) and end tag (>>>)
+
+	ex)
+		./crf-finder.sh -d 514.515 -m cli 
+		./crf-finder.sh -d 514.515 -m file -i /path/to/the/input -o /path/to/the/output
+
+	= Entity Dictionary Finder =
+	./dict-finder.sh [options]
+	-d	dictionary name
+	-m	mode [ cli | file ]
+	-i	input file to be tested : [Raw Text Format]
+	-o	output file to write the result : input text will be tagged by start tag (<<<) and end tag (>>>)
+
+	ex)
+		./dict-finder.sh -d 514.515.dict -m cli
+		./dict-finder.sh -d 514.515.dict -m file -i /path/to/the/input -o /path/to/the/output
+
+2. Training for CRF Finder
+	2.1. 현재 기본 탑재되어 있는 model 들은 사전 기반 자동 학습셋을 구축하여 그것을 기반으로 생성된 모델들이다.
+	2.2. Hyperparameter Optimized (cross validated).
+	2.3. 모델 구축 Process
+    	2.3.1 prerequisite 
+			- entity dictionary ( com.skplanet.nlp.entity-dict package 참고 )
+		2.3.2	training set 구축 
+			./crf-trainset.sh [options]
+			-d	dictionary file
+			-i	input raw file
+			-o	output training set
+			ex) 
+				./crf-trainset.sh -d 514.515.dict -i /path/to/the/input/file -o /path/to/the/trainset
+		2.3.3	training
+			./crf-train.sh [options]
+			-p	training template
+			-t	training set
+			-m	model
+			-f	cutoff value
+			-c	cost factor
+			ex) 
+				./crf-train.sh -p 514.515.template -t /path/to/the/trainset -f 2 -c 1.3
+
+3. Entity Dictionary Generation
+	3.1. 기본적으로 3-depth 까지 세분화 되어 있는 카테고리를 임의로 조합하여 사전을 자동으로 구축 할 수 있다.
+	3.2. 원하는 카테고리를 조합하거나, 기본 프로그램에서 쿼리를 생성하여 사전항목들을 조합하여 구성 할 수 있다.
+	3.3. 자동 구축된 사전은 따로 수잡업 정제작업이 권장 된다 (optional)
+	3.4. 구축된 사전은 이후 자동 학습셋 구축시 사용될 수 있다. 
+	3.5. 사전 자동 구축 프로세스
+		==> "entity-dict-generator" package 참고
+
+

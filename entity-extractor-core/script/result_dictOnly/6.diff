@@ -1,0 +1,8 @@
+1,3c1,3
+< Precision: 0.790
+< Recall: 0.791
+< F-Score: 0.791
+---
+> Precision: 0.212
+> Recall: 0.180
+> F-Score: 0.194

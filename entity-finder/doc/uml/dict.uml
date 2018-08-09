@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.skplanet.nlp.dict</OriginalElement>
+  <nodes>
+    <node x="27.0" y="0.0">com.skplanet.nlp.dict.Dictionary</node>
+    <node x="0.0" y="168.0">com.skplanet.nlp.dict.AbstractDictionary</node>
+    <node x="0.0" y="404.0">com.skplanet.nlp.dict.ProductDictionary</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.skplanet.nlp.dict.AbstractDictionary" target="com.skplanet.nlp.dict.Dictionary">
+      <point x="0.0" y="-93.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="com.skplanet.nlp.dict.ProductDictionary" target="com.skplanet.nlp.dict.AbstractDictionary">
+      <point x="0.0" y="-93.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="135.5" y="295.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
